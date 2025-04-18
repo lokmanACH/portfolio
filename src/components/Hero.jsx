@@ -52,7 +52,7 @@ function Hero() {
               </h1>
 
               <p className="hero-subtitle">
-                We build cutting-edge23 websites and applications using modern
+                We build cutting-edge websites and applications using modern
                 technologies to help your business thrive in the digital world.
               </p>
 
