@@ -1,0 +1,19 @@
+:root {
+  /* Theme colors */
+  --background-default: #121212;
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  
+  /* Brand colors */
+  --brand-yellow: #FFC107;
+  --brand-orange: #FF9800;
+  --brand-pink: #E91E63;
+  --brand-purple: #9C27B0;
+  --brand-deep-purple: #673AB7;
+  
+  /* Primary colors */
+  --primary-main: #3f51b5;
+  --primary-dark: #303f9f;
+  --primary-light: #7986cb;
+  --primary-main-rgb: 63, 81, 181;
+}

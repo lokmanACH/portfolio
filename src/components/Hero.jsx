@@ -1,54 +1,18 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Typography,
-  Button,
-  Grid,
-  useTheme,
-} from "@mui/material";
 import { motion } from "framer-motion";
+import * as Separator from "@radix-ui/react-separator";
 import logo from "../icons/coding.png";
+import "../style/heroStyle.css";
 
 function Hero() {
-  const theme = useTheme();
-
   return (
-    <Box
-      id="home"
-      sx={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        background: `linear-gradient(135deg, ${theme.palette.background.default} 0%, #1A1A2E 100%)`,
-        position: "relative",
-        overflow: "hidden",
-        pt: 8,
-        pb: 10,
-      }}
-    >
+    <section id="home" className="hero">
       {/* Animated background elements */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          overflow: "hidden",
-          zIndex: 0,
-        }}
-      >
+      <div className="hero-background">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
-            style={{
-              position: "absolute",
-              borderRadius: "50%",
-              filter: "blur(80px)",
-              opacity: 0.15,
-              zIndex: 0,
-            }}
+            className="hero-blob"
             animate={{
               x: [Math.random() * 100, Math.random() * -100],
               y: [Math.random() * 100, Math.random() * -100],
@@ -64,56 +28,37 @@ function Hero() {
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
               background: [
-                theme.palette.brandColors.yellow,
-                theme.palette.brandColors.orange,
-                theme.palette.brandColors.pink,
-                theme.palette.brandColors.purple,
-                theme.palette.brandColors.deepPurple,
+                "var(--brand-yellow)",
+                "var(--brand-orange)",
+                "var(--brand-pink)",
+                "var(--brand-purple)",
+                "var(--brand-deep-purple)",
               ][i % 5],
             }}
           />
         ))}
-      </Box>
+      </div>
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={7}>
+      <div className="hero-container">
+        <div className="hero-grid">
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Typography
-                variant="h2"
-                component="h1"
-                sx={{
-                  fontWeight: 800,
-                  mb: 2,
-                  background: `linear-gradient(90deg, ${theme.palette.brandColors.yellow} 0%, ${theme.palette.brandColors.orange} 25%, ${theme.palette.brandColors.pink} 50%, ${theme.palette.brandColors.purple} 75%, ${theme.palette.brandColors.deepPurple} 100%)`,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  textFillColor: "transparent",
-                  fontSize: { xs: "2.5rem", md: "3.5rem" },
-                }}
-              >
+              <h1 className="hero-title">
                 Transforming Ideas Into Digital Reality
-              </Typography>
+              </h1>
 
-              <Typography
-                variant="h5"
-                color="text.secondary"
-                sx={{ mb: 4, fontWeight: 400, lineHeight: 1.6 }}
-              >
+              <p className="hero-subtitle">
                 We build cutting-edge websites and applications using modern
                 technologies to help your business thrive in the digital world.
-              </Typography>
+              </p>
 
-              <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="large"
+              <div className="hero-buttons">
+                <button
+                  className="hero-button hero-button-primary"
                   onClick={() =>
                     document
                       .getElementById("contact")
@@ -121,11 +66,9 @@ function Hero() {
                   }
                 >
                   Get Started
-                </Button>
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  size="large"
+                </button>
+                <button
+                  className="hero-button hero-button-outlined"
                   onClick={() =>
                     document
                       .getElementById("projects")
@@ -133,34 +76,27 @@ function Hero() {
                   }
                 >
                   View Our Work
-                </Button>
-              </Box>
+                </button>
+              </div>
             </motion.div>
-          </Grid>
+          </div>
 
-          <Grid item xs={12} md={5}>
+          <div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Box
-                component="img"
+              <img
                 src={logo}
                 alt="Web Development"
-                sx={{
-                  width: "100%",
-                  height: "auto",
-                  maxWidth: "500px",
-                  display: "block",
-                  mx: "auto",
-                }}
+                className="hero-image"
               />
             </motion.div>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

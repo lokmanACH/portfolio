@@ -1,4 +1,5 @@
 import React from "react";
+import "./style/variables.css";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "./theme/theme";
 import Header from "./components/Header";
