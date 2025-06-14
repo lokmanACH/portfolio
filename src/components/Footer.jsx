@@ -180,7 +180,7 @@ function Footer() {
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
               <Typography variant="body2" color="text.secondary">
-                San Francisco, CA
+                Constantine, Elkhroub
               </Typography>
               <Link
                 href="mailto:loukmene.achouche@univ-constantine2.dz"
